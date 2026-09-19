@@ -17,6 +17,12 @@ const Navbar = ({setShowLogin}) => {
         
     }
 
+    const onClickHome = (event) => {
+        onclickMenuItem(event);
+        setShowMenu(true);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     
 
     return(
@@ -25,7 +31,7 @@ const Navbar = ({setShowLogin}) => {
             {showMenu && 
                 (
                     <ul className="menu">
-                        <Link to="/" onClick={onclickMenuItem} className={menuItem==="Home"?"active menu-item": "menu-item"}>Home</Link>
+                        <Link to="/" onClick={onClickHome} className={menuItem==="Home"?"active menu-item": "menu-item"}>Home</Link>
                         <a href="#exploreMenu" onClick={onclickMenuItem} className={menuItem==="Menu"?"active menu-item": "menu-item"}>Menu</a>
                         <a href="#appDownload" onClick={onclickMenuItem} className={menuItem==="Mobile-App"?"active menu-item": "menu-item"}>Mobile-App</a>
                         <a href="#footer" onClick={onclickMenuItem} className={menuItem==="Contact Us"?"active menu-item": "menu-item"}>Contact Us</a>
